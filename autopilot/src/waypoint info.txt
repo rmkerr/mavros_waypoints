@@ -1,0 +1,13 @@
+We can load waypoints from a file using the mavwp command, launched using the following format
+rosrun mavros mavwp load <waypoint file>
+There is an example waypoint file at /home/$USER/local_ws/waypoints.txt
+The format for waypoint files is as follows. Note that each section is separated by a tab \t, and that a newline separates each command. The header only needs to be on the first line:
+QGC WPL <VERSION>
+<INDEX> <CURRENT WP> <COORD FRAME> <COMMAND> <PARAM1> <PARAM2> <PARAM3> <PARAM4> <PARAM5/X/LONGITUDE> <PARAM6/Y/LATITUDE> <PARAM7/Z/ALTITUDE> <AUTOCONTINUE>
+For more command options, see the mavlink docs at https://pixhawk.ethz.ch/mavlink/
+Note that not all commands are supported by px4.
+http://ardupilot.org/copter/docs/mission-command-list.html#
+
+Once commands are sent, we need to switch to auto mode and the waypoints will be executed
+
+See http://forum.erlerobotics.com/t/solved-waypoint-for-ros-take-off-land-script/611/9 for example code.
